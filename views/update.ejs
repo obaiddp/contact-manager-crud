@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10">
+        
+        <!-- <div class="mb-7">
+            <a class="text-blue-500" href="/contacts">Update</a>
+        </div>
+         -->
+
+        <div class="flex justify-center">
+            <div class="bg-zinc-800 p-8 rounded-lg max-w-md w-full">
+                
+                <h1 class="text-4xl text-white font-bold mb-7 text-center">
+                    Update Contact
+                </h1>
+                
+                <form class="flex flex-col" action="/update/<%= contact._id %>" method="post"  onsubmit="console.log('Form submitted via POST')">
+                    <input
+                        class="px-10 py-2 rounded-lg text-black mb-5"
+                        placeholder="name"
+                        name="name"
+                        value="<%= contact.name %>"
+                        type="text">
+
+                    <input
+                        class="px-10 py-2 rounded-lg text-black mb-5"
+                        placeholder="phone number"
+                        name="contact"
+                        value="<%= contact.phoneNumber %>"
+                        type="text">
+
+                    <input
+                        class="px-10 py-2 rounded-lg text-black mb-5"
+                        placeholder="email"
+                        name="email"
+                        value="<%= contact.email %>"
+                        type="email">
+
+                    <input
+                        class="px-10 py-2 rounded-lg text-black mb-5"
+                        placeholder="address"
+                        name="address"
+                        value="<%= contact.address %>"
+                        type="text">
+                    
+                    <button 
+                        class="px-10 py-2 rounded-lg bg-yellow-500 text-white mb-5"
+                        type="submit">
+                        Submit
+                    </button>
+                </form>
+            </div>
+    
+        </div>
+</body>
+</html>

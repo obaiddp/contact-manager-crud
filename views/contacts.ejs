@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-full bg-zinc-900 p-10 text-white">
+        
+        <nav class="mb-10">
+            <a class="text-blue-500" href="/">Create Contact</a>
+        </nav>
+        
+        <h1 class="text-3xl font-bold mb-8 text-center">Contacts List</h1>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <% contacts.forEach(function(contact) { %>
+                <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 hover:translate-y-[-2px]">
+                    
+                    <div class="p-5">
+                        <h2 class="text-xl font-semibold mb-3 text-white"><%= contact.name %></h2>
+                        
+                        <div class="text-zinc-300 mb-1">
+                            <span class="font-medium">Phone:</span> <%= contact.phoneNumber %>
+                        </div>
+                        
+                        <div class="text-zinc-300 mb-1">
+                            <span class="font-medium">Email:</span> <%= contact.email %>
+                        </div>
+                        
+                        <div class="text-zinc-300 mb-4">
+                            <span class="font-medium">Address:</span> <%= contact.address %>
+                        </div>
+                        
+                        <div class="flex gap-4 justify-end mt-4 pt-3 border-t border-zinc-700">
+                            <a class="text-grey-300 hover:text-white-400" href="/edit/<%= contact._id %>">Edit</a>
+                            <a class="text-red-500 hover:text-red-400" href="/delete/<%= contact._id %>">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
